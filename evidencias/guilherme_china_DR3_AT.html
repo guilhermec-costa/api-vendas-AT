@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Microsserviços e DevOps com Spring Boot e Spring Cloud</title>
+  <style>
+    @page { size: A4; margin: 14mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #172033; font: 14px/1.45 Arial, sans-serif; background: #fff; }
+    .page { min-height: 267mm; page-break-after: always; position: relative; padding: 3mm; }
+    .page:last-child { page-break-after: auto; }
+    .cover { display: flex; min-height: 260mm; flex-direction: column; justify-content: center; text-align: center; }
+    h1 { margin: 0 0 12px; color: #173b72; font-size: 30px; }
+    h2 { margin: 0 0 8px; color: #173b72; font-size: 22px; border-bottom: 2px solid #d6e1f0; padding-bottom: 7px; }
+    h3 { margin: 10px 0 5px; color: #2a4d78; font-size: 15px; }
+    p { margin: 6px 0; }
+    a { color: #1558a6; overflow-wrap: anywhere; }
+    .meta { margin: 28px auto; width: 75%; padding: 20px; border: 1px solid #cbd5e1; border-radius: 8px; text-align: left; }
+    .evidence { position: relative; margin-top: 14px; height: 205mm; border: 1px solid #cbd5e1; border-radius: 6px; background: #fff; overflow: hidden; }
+    .evidence.small { height: 96mm; }
+    .evidence.docker-list { height: 40mm; }
+    .evidence.docker-response { height: 140mm; }
+    .evidence img { width: 100%; height: 100%; object-fit: contain; background: white; }
+    .caption { color: #516072; font-size: 12px; margin-top: 5px; }
+    .checklist { margin: 20px auto; width: 80%; text-align: left; }
+    .footer { position: absolute; bottom: 0; width: 100%; color: #75849a; text-align: center; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <section class="page cover">
+    <h1>Microsserviços e DevOps com Spring Boot e Spring Cloud</h1>
+    <p><strong>DR3 — Assessment</strong></p>
+    <div class="meta">
+      <p><strong>Aluno:</strong> Guilherme de Morais China Costa</p>
+      <p><strong>Matrícula:</strong> 44671579804</p>
+      <p><strong>Branch:</strong> atividade-guilherme_china</p>
+      <p><strong>Repositório:</strong> <a href="https://github.com/guilhermec-costa/api-vendas-AT">github.com/guilhermec-costa/api-vendas-AT</a></p>
+    </div>
+    <p>Relatório de evidências dos exercícios 1 a 12</p>
+    <div class="footer">Guilherme de Morais China Costa — 44671579804</div>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 1 — produtos-service no Eureka</h2>
+    <div class="evidence"><img src="prints/exe1.png" alt="Painel do Eureka com PRODUTOS-SERVICE registrado"></div>
+    <p class="caption">Figura 1 — Registro do produtos-service no Eureka.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 2 — Branch e Pull Request</h2>
+    <div class="evidence"><img src="prints/exe2.png" alt="Pull Request da branch atividade-guilherme_china para main"></div>
+    <p class="caption">Figura 2 — Pull Request da atividade.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 3 — Inicialização na porta 8084</h2>
+    <div class="evidence"><img src="prints/exe3.png" alt="Terminal com fornecedores-service iniciado na porta 8084"></div>
+    <p class="caption">Figura 3 — Inicialização do novo microsserviço.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 4 — Cinco fornecedores no H2</h2>
+    <div class="evidence"><img src="prints/exe4.png" alt="H2 Console com cinco fornecedores cadastrados"></div>
+    <p class="caption">Figura 4 — Dados carregados automaticamente no H2.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 5 — Endpoints GET e status 404</h2>
+    <div class="evidence small"><img src="prints/exe5_1.png" alt="GET de todos os fornecedores com status 200"></div>
+    <p class="caption">Figura 5A — Listagem de fornecedores com status 200 OK.</p>
+    <div class="evidence small"><img src="prints/exe5_2.png" alt="GET de fornecedor inexistente com status 404"></div>
+    <p class="caption">Figura 5B — Consulta de ID inexistente com status 404 Not Found.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 6 — fornecedores-service no Eureka</h2>
+    <div class="evidence"><img src="prints/exe6.png" alt="Painel do Eureka com FORNECEDORES-SERVICE registrado"></div>
+    <p class="caption">Figura 6 — Registro do fornecedores-service no Eureka.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 7 — Configuração centralizada</h2>
+    <div class="evidence small"><img src="prints/exe7_1.png" alt="Resposta do Config Server para fornecedores-service"></div>
+    <p class="caption">Figura 7A — Propriedades do serviço fornecidas pelo Config Server.</p>
+    <div class="evidence small"><img src="prints/exe7_2.png" alt="Inicialização do serviço na porta configurada pelo Config Server"></div>
+    <p class="caption">Figura 7B — Serviço iniciado na porta 8084 configurada externamente.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 8 — Acesso pelo Gateway</h2>
+    <div class="evidence"><img src="prints/exe8.png" alt="Lista de fornecedores acessada pelo Gateway na porta 8085"></div>
+    <p class="caption">Figura 8 — Roteamento dinâmico pelo Spring Cloud Gateway.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 9 — Cadastro com POST</h2>
+    <div class="evidence"><img src="prints/exe9.png" alt="POST de fornecedor com status 201 e ID gerado"></div>
+    <p class="caption">Figura 9 — Novo fornecedor persistido.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 10 — Consulta ao produtos-service com Feign</h2>
+    <div class="evidence"><img src="prints/exe10.png" alt="Produtos obtidos pelo fornecedores-service com OpenFeign"></div>
+    <p class="caption">Figura 10 — Comunicação entre microsserviços via OpenFeign e Eureka.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 11 — Docker Compose e Gateway</h2>
+    <div class="evidence docker-list"><img src="prints/exe11_1.png" alt="Containers do projeto em execução pelo Docker Compose"></div>
+    <p class="caption">Figura 11A — Infraestrutura iniciada pelo Docker Compose.</p>
+    <div class="evidence docker-response"><img src="prints/exe11_2.png" alt="Resposta dos fornecedores pelo Gateway no ambiente Docker"></div>
+    <p class="caption">Figura 11B — Resposta integrada pelo Gateway no ambiente Docker.</p>
+  </section>
+
+  <section class="page">
+    <h2>Exercício 12 — GitHub Actions</h2>
+    <div class="evidence"><img src="prints/exe12.png" alt="Pipeline do GitHub Actions concluído com sucesso"></div>
+    <p class="caption">Figura 12 — Compilação Maven automatizada com Java 17.</p>
+  </section>
+</body>
+</html>
