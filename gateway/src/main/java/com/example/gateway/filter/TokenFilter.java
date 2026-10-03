@@ -42,7 +42,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
         String caminho = exchange.getRequest().getURI().getPath();
 
         // Rota livre: chain.filter e' o "pode seguir", sem conferir nada.
-        if (LIVRES.contains(caminho)) {
+        if (LIVRES.contains(caminho) || caminho.startsWith("/fornecedores-service/fornecedores")) {
             return chain.filter(exchange);
         }
 
